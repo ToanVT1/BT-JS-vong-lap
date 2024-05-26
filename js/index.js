@@ -79,55 +79,122 @@ function bai2TongSn_Do_While(x, n) {
     return tong;
 }
 //Bai 3, tinh giai thua
-document.getElementById('log-2').onclick = function(){
+document.getElementById('log-2').onclick = function () {
     var n2 = Number(document.getElementById('n-2').value);
     var outPut2 = tinhGiaiThua_Do_While(n2);
     document.getElementById('Gt').innerHTML = "Giai thua cua so n la:" + outPut2;
 }
 //Cach 1--For
-function tinhGiaiThua_For(n2){
+function tinhGiaiThua_For(n2) {
     var giaiThua = 1;
-    for(var count =1;count<=n2; count++){
-        giaiThua = giaiThua*count;
+    for (var count = 1; count <= n2; count++) {
+        giaiThua = giaiThua * count;
     }
     console.log(giaiThua);
     return giaiThua;
 }
 //Cach 2--While
-function tinhGiaiThua_While(n2){
+function tinhGiaiThua_While(n2) {
     var giaiThua = 1;
-    var count =1;
-    while(count<=n2){
-        giaiThua = giaiThua*count;
+    var count = 1;
+    while (count <= n2) {
+        giaiThua = giaiThua * count;
         count++;
     }
     console.log(giaiThua);
     return giaiThua;
 }
 //Cach 3--Do_While
-function tinhGiaiThua_Do_While(n2){
+function tinhGiaiThua_Do_While(n2) {
     var giaiThua = 1;
-    var count =1;
-    do{
-        giaiThua = giaiThua*count;
+    var count = 1;
+    do {
+        giaiThua = giaiThua * count;
         count++;
     }
-    while(count<=n2){
-       
+    while (count <= n2) {
+
     }
     console.log(giaiThua);
     return giaiThua;
 }
-//Bai 4--In the Div
-document.getElementById('log-3').onclick = function(){
-    for(var count =1; count<=10; count++){
-        document.getElementById('Bg1').style.backgroundColor = red;
-    }
+//Bai 4: In ra 10 the div
 
-    
+document.getElementById('log-4').onclick = function () {
+    var getEle = document.getElementById('Bg1');
+
+    getEle.innerHTML = inTheDiv_DoWhile();
+}
+//cach 1
+function inTheDiv_For() {
+    var contentHtml = '';
+    for (var count = 1; count <= 10; count++) {
+        if (count % 2 == 0) {
+            contentHtml += '<div class="div_red">' + 'div' + count + '</div>';
+        } else {
+            contentHtml += '<div class="div_blue">' + 'Div' + count + '</div>';
+        }
+    }
+    return contentHtml
+}
+// cach 2
+function inTheDiv_While() {
+    var count = 1;
+    var contentHtml = '';
+    while (count <= 10) {
+
+        if (count % 2 == 0) {
+            contentHtml += '<div class="div_red">' + 'div' + count + '</div>';
+        } else {
+            contentHtml += '<div class="div_blue">' + 'Div' + count + '</div>';
+        }
+        count++
+    }
+    return contentHtml;
+}
+// cach 3
+function inTheDiv_DoWhile() {
+    var count = 1;
+    var contentHtml = '';
+
+    do {
+        if (count % 2 == 0) {
+            contentHtml += '<div class="div_red">' + 'div' + count + '</div>';
+        } else {
+            contentHtml += '<div class="div_blue">' + 'Div' + count + '</div>';
+        }
+        count++;
+
+    } while (count <= 10)
+    return contentHtml;
 }
 
-   
+
+
+
+
+
+//Bai 5--so nguyen to
+document.getElementById('log-5').onclick = function () {
+    var n5 = +document.getElementById('n-5').value;
+    var outPut5 = inSoNguyenTo(n5);
+    document.getElementById('log-5').innerHTML = outPut5;
+
+
+}
+
+function inSoNguyenTo(n5) {
+    for (var count = 1; count <= Math.sqrt(n5); count++) {
+        if (n5 % count == 0) {
+
+            return n5
+        }
+    }
+}
+
+
+
+
 
 
 
